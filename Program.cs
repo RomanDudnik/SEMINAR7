@@ -46,13 +46,13 @@ Show2dArray(newArray);
 // 1 2 3
 
 /*
-int [,] Create2dArray(int row, int column)  // создание двумерного массива
+int [,] Create2dArray(int row, int column)  
 {
     int [,] createdArray = new int [row, column];
 
     for (int i = 0; i < row; i++)
         for (int j = 0; j < column; j++)
-            createdArray [i,j] = i + j;
+            createdArray [i,j] = i + j;    // по формуле  Aₘₙ = m+n
     return createdArray;
 }
 
@@ -62,11 +62,11 @@ void Show2dArray(int [,] array)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            Console.Write(array[i, j] + " ");  //вывод значений
+            Console.Write(array[i, j] + " ");  
         }
-        Console.WriteLine();   // переход на новую строку
+        Console.WriteLine();   
     }
-    Console.WriteLine();   // отступ от массива
+    Console.WriteLine();   
 }
 
 Show2dArray(Create2dArray(2, 3));
@@ -75,3 +75,49 @@ Show2dArray(Create2dArray(2, 3));
 //Задайте двумерный массив. Найдите элементы, у которых оба индекса чётные, 
 //и замените эти элементы на их квадраты.
 
+/*
+int [,] Create2dArray(int row, int column, int minVal, int maxVal)
+{  
+    int [,] createdArray = new int [row, column];
+
+    for (int i = 0; i < row; i++)
+        for (int j = 0; j < column; j++)
+            createdArray [i,j] = new Random().Next(minVal, maxVal + 1);
+    return createdArray;
+}
+
+void Show2dArray(int [,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i, j] + " ");  
+        }
+        Console.WriteLine();   
+    }
+    Console.WriteLine();  
+}
+
+int Even2dArray (int [,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            if(i % 2 == 0 && j % 2 == 0)
+            {
+                array[i, j] *= array[i, j];
+            }
+        }
+    }
+    return array;
+}
+
+int[,] create2dArray = Create2dArray (5, 6, -5, 10);
+Show2dArray(create2dArray);
+Even2dArray(create2dArray);
+Show2dArray(create2dArray);
+*/
+
+//Найти сумму элементов главной диагонали
