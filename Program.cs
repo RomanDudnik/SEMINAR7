@@ -121,3 +121,49 @@ Show2dArray(create2dArray);
 */
 
 //Найти сумму элементов главной диагонали
+
+/*
+int [,] Create2dArray(int row, int column, int minVal, int maxVal)  // создание двумерного массива
+{
+    int [,] createdArray = new int [row, column];
+
+    for (int i = 0; i < row; i++)
+        for (int j = 0; j < column; j++)
+            createdArray [i,j] = new Random().Next(minVal, maxVal + 1);
+    return createdArray;
+}
+
+void Show2dArray(int [,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i, j] + " ");  //вывод значений
+        }
+        Console.WriteLine();   // переход на новую строку
+    }
+    Console.WriteLine();   // отступ от массива
+}
+
+int SumMainDiag (int [,] array)
+{
+    int sum = 0;
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            if (i == j)
+            {
+                sum += array[i, j];
+            }
+        }
+    }
+    return sum;
+}
+
+int[,] newArray = Create2dArray(3, 4, 5, 10);
+Show2dArray(newArray);
+int sum = SumMainDiag(newArray);
+Console.WriteLine($"Summ Main Diagonal {sum}");
+*/
